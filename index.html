@@ -22,7 +22,10 @@
         }
 
         header {
-            background-color: #333;
+            background: rgba(51, 51, 51, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding: 20px 0;
             position: fixed;
             top: 0;
@@ -30,6 +33,7 @@
             width: 100%;
             z-index: 1000;
             transition: all 0.3s ease;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         }
 
         nav {
@@ -103,13 +107,171 @@
         .container {
             width: 100%;
             min-height: 100vh;
-            padding: 120px 50px;
-            background-color: rgb(159, 65, 236);
+            padding: 120px 100px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             margin-top: 0;
             position: relative;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Bubble Animation Background */
+        .bubbles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: rise 10s infinite ease-in;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .bubble:nth-child(1) {
+            width: 40px;
+            height: 40px;
+            left: 10%;
+            animation-duration: 8s;
+            animation-delay: 0s;
+        }
+
+        .bubble:nth-child(2) {
+            width: 20px;
+            height: 20px;
+            left: 20%;
+            animation-duration: 5s;
+            animation-delay: 1s;
+        }
+
+        .bubble:nth-child(3) {
+            width: 50px;
+            height: 50px;
+            left: 35%;
+            animation-duration: 7s;
+            animation-delay: 2s;
+        }
+
+        .bubble:nth-child(4) {
+            width: 80px;
+            height: 80px;
+            left: 50%;
+            animation-duration: 11s;
+            animation-delay: 0s;
+        }
+
+        .bubble:nth-child(5) {
+            width: 35px;
+            height: 35px;
+            left: 55%;
+            animation-duration: 6s;
+            animation-delay: 1s;
+        }
+
+        .bubble:nth-child(6) {
+            width: 45px;
+            height: 45px;
+            left: 65%;
+            animation-duration: 8s;
+            animation-delay: 3s;
+        }
+
+        .bubble:nth-child(7) {
+            width: 25px;
+            height: 25px;
+            left: 70%;
+            animation-duration: 7s;
+            animation-delay: 2s;
+        }
+
+        .bubble:nth-child(8) {
+            width: 80px;
+            height: 80px;
+            left: 80%;
+            animation-duration: 6s;
+            animation-delay: 2s;
+        }
+
+        .bubble:nth-child(9) {
+            width: 15px;
+            height: 15px;
+            left: 70%;
+            animation-duration: 9s;
+            animation-delay: 0s;
+        }
+
+        .bubble:nth-child(10) {
+            width: 50px;
+            height: 50px;
+            left: 85%;
+            animation-duration: 5s;
+            animation-delay: 0s;
+        }
+
+        .bubble:nth-child(11) {
+            width: 90px;
+            height: 90px;
+            left: 90%;
+            animation-duration: 10s;
+            animation-delay: 4s;
+        }
+
+        .bubble:nth-child(12) {
+            width: 30px;
+            height: 30px;
+            left: 95%;
+            animation-duration: 8s;
+            animation-delay: 1s;
+        }
+
+        .bubble:nth-child(13) {
+            width: 60px;
+            height: 60px;
+            left: 5%;
+            animation-duration: 7s;
+            animation-delay: 3s;
+        }
+
+        .bubble:nth-child(14) {
+            width: 40px;
+            height: 40px;
+            left: 15%;
+            animation-duration: 9s;
+            animation-delay: 2s;
+        }
+
+        .bubble:nth-child(15) {
+            width: 70px;
+            height: 70px;
+            left: 25%;
+            animation-duration: 6s;
+            animation-delay: 1s;
+        }
+
+        @keyframes rise {
+            0% {
+                bottom: -100px;
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(100px);
+            }
+            100% {
+                bottom: 1080px;
+                transform: translateX(-200px);
+            }
         }
 
         h2 {
@@ -167,7 +329,7 @@
             max-width: 350px;
             width: 100%;
             left: 70%;
-            top: 30%;
+            top: -15%;
             position: absolute;
             border-radius: 50% 15%;
             border: 2px solid gray;
@@ -605,8 +767,10 @@
             .nav-list {
                 display: none;
                 flex-direction: column;
-                background-color: rgba(51, 51, 51, 0.95);
-                backdrop-filter: blur(10px);
+                background: rgba(51, 51, 51, 0.1);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
                 position: fixed;
                 top: 80px;
                 left: 0;
@@ -619,6 +783,7 @@
                 min-height: 120px;
                 align-items: center;
                 justify-content: center;
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             }
 
             .nav-list::-webkit-scrollbar {
@@ -777,10 +942,61 @@
             /* Container Section */
             .container {
                 flex-direction: column;
-                padding: 60px 20px;
+                padding: 120px 20px 60px 20px;
                 text-align: center;
                 min-height: 100vh;
                 justify-content: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* Mobile bubble adjustments */
+            .bubble {
+                animation-duration: 6s !important;
+            }
+
+            .bubble:nth-child(1) { animation-duration: 5s !important; }
+            .bubble:nth-child(2) { animation-duration: 4s !important; }
+            .bubble:nth-child(3) { animation-duration: 6s !important; }
+            .bubble:nth-child(4) { animation-duration: 7s !important; }
+            .bubble:nth-child(5) { animation-duration: 5s !important; }
+            .bubble:nth-child(6) { animation-duration: 6s !important; }
+            .bubble:nth-child(7) { animation-duration: 4s !important; }
+            .bubble:nth-child(8) { animation-duration: 5s !important; }
+            .bubble:nth-child(9) { animation-duration: 6s !important; }
+            .bubble:nth-child(10) { animation-duration: 4s !important; }
+            .bubble:nth-child(11) { animation-duration: 7s !important; }
+            .bubble:nth-child(12) { animation-duration: 5s !important; }
+            .bubble:nth-child(13) { animation-duration: 6s !important; }
+            .bubble:nth-child(14) { animation-duration: 4s !important; }
+            .bubble:nth-child(15) { animation-duration: 5s !important; }
+
+            @media (max-width: 768px) {
+                .container {
+                    padding: 100px 10px 40px 10px;
+                    min-height: 100vh;
+                    justify-content: flex-start;
+                }
+                h2 {
+                    font-size: 22px;
+                    margin-bottom: 18px;
+                    margin-top: 10px;
+                    text-align: center;
+                    letter-spacing: 1px;
+                }
+                h1 {
+                    font-size: 32px;
+                    margin-bottom: 18px;
+                    margin-top: 0;
+                    text-align: center;
+                    letter-spacing: 1px;
+                }
+                p {
+                    font-size: 15px;
+                    line-height: 1.6;
+                    margin-bottom: 18px;
+                    text-align: center;
+                }
             }
 
             .text-section,
@@ -950,26 +1166,49 @@
         </nav>
     </header>
     <div class="container" id="home">
-        <h2>HELLO. It's Me</h2>
-        <h1>AYUSH TYAGI</h1>
-        <P>And 1'm<br>I'm a web Designer with extensive experience for 1 year.<br>expertise is to create and website
-            design, frontend design,and many more.....</P>
-        <div class="social-media">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-
+        <!-- Bubble Animation Background -->
+        <div class="bubbles">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
         </div>
-        <a href="#about" class="btn-box">More About Me</a>
-        <!-- <div class="image">
-            <img src="image/IMG-20240823-WA0000-removebg-preview.png" alt="">
-        </div> -->
-        <div class="image">
-    <img src="image/IMG-20240823-WA0000-removebg-preview.png" alt="" class="glow-border">
-</div>
+        
+        <!-- Content positioned above bubbles -->
+        <div style="position: relative; z-index: 2;">
+            <h2>HELLO. It's Me</h2>
+            <h1>AYUSH TYAGI</h1>
+            <P>And 1'm<br>I'm a web Designer with extensive experience for 1 year.<br>expertise is to create and website
+                design, frontend design,and many more.....</P>
+            <div class="social-media">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+
+            </div>
+            <a href="#about" class="btn-box">More About Me</a>
+            <!-- <div class="image">
+                <img src="image/IMG-20240823-WA0000-removebg-preview.png" alt="">
+            </div> -->
+            <div class="image">
+        <img src="image/IMG-20240823-WA0000-removebg-preview.png" alt="" class="glow-border">
+    </div>
+        </div>
     </div>
 <!-- About section -->
    <div class="About" id="about">
+    
         <div class="main">
             <img src="image/IMG-20240823-WA0000-removebg-preview.png" alt="">
             <div class="about-text">
@@ -1180,11 +1419,17 @@
             // Add scroll effect to navbar
             window.addEventListener("scroll", () => {
                 if (window.scrollY > 50) {
-                    header.style.backgroundColor = "rgba(51, 51, 51, 0.95)";
-                    header.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.3)";
+                    header.style.background = "rgba(51, 51, 51, 0.2)";
+                    header.style.backdropFilter = "blur(25px)";
+                    header.style.webkitBackdropFilter = "blur(25px)";
+                    header.style.boxShadow = "0 8px 32px 0 rgba(31, 38, 135, 0.5)";
+                    header.style.borderBottom = "1px solid rgba(255, 255, 255, 0.2)";
                 } else {
-                    header.style.backgroundColor = "#333";
-                    header.style.boxShadow = "none";
+                    header.style.background = "rgba(51, 51, 51, 0.1)";
+                    header.style.backdropFilter = "blur(20px)";
+                    header.style.webkitBackdropFilter = "blur(20px)";
+                    header.style.boxShadow = "0 8px 32px 0 rgba(31, 38, 135, 0.37)";
+                    header.style.borderBottom = "1px solid rgba(255, 255, 255, 0.1)";
                 }
             });
 
@@ -1289,6 +1534,5 @@
         
     </style>
 </body>
-
 
 </html>
